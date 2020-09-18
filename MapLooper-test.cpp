@@ -59,8 +59,8 @@ int main(int argc, char const *argv[]) {
 
   mpr_sig sigs[] = {sigLocalOut, sigMix};
   mpr_map map = mpr_map_new(2, sigs, 1, &sigLocalIn);
-  // const char *expr = "y=(1-x1)*x0+x1*y{-127}";
-  const char *expr = "y=y{-127}";
+   const char *expr = "y=(1-x1)*x0+x1*y{-1000}";
+//  const char *expr = "y=y{-500}";
   mpr_obj_set_prop(map, MPR_PROP_EXPR, 0, 1, MPR_STR, expr, 1);
   mpr_obj_push(map);
 
@@ -78,7 +78,7 @@ int main(int argc, char const *argv[]) {
     mpr_sig_set_value(sigLoopOut, 0, 1, MPR_FLT, &output);
 
     value += 0.01;
-    if (value > 10) {
+    if (value > 20) {
       value = 0;
     }
 
