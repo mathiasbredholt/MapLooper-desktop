@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.17)
-project(libmapper-test VERSION 0.1.0 LANGUAGES CXX)
+project(MapLooper-test VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
-add_executable(libmapper-test libmapper-test.cpp)
 
+add_executable(MapLooper-test MapLooper-test.cpp)
 find_library(LIBMAPPER mapper)
-target_link_libraries(libmapper-test ${LIBMAPPER})
+target_link_libraries(MapLooper-test ${LIBMAPPER})
