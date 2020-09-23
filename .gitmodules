@@ -1,0 +1,8 @@
+[submodule "MapLooper"]
+	path = MapLooper
+	url = https://github.com/mathiasbredholt/MapLooper
+	branch = develop
+[submodule "link"]
+	path = link
+	url = https://github.com/mathiasbredholt/link.git
+	branch = ESP32-updates

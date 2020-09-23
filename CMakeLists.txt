@@ -3,6 +3,11 @@ project(MapLooper-test VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(MapLooper-test MapLooper-test.cpp)
+include(link/AbletonLinkConfig.cmake)
+
 find_library(LIBMAPPER mapper)
-target_link_libraries(MapLooper-test ${LIBMAPPER})
+include_directories(MapLooper/include)
+add_executable(test test.cpp)
+target_link_libraries(test ${LIBMAPPER})
+target_link_libraries(test Ableton::Link)
+
