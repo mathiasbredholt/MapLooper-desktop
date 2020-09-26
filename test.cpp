@@ -22,10 +22,15 @@
 int main(int argc, char const *argv[]) {
   MapLooper::MapLooper mapLooper;
 
-  mapLooper.createLoop("test", MPR_FLT, 1, "src", "dst");
+  MapLooper::Loop* loop = mapLooper.createLoop("test", MPR_FLT, 1);
+  loop->mapInput("out/slider1");
+  loop->mapOutput("in/slider2");
+  loop->mapMix("out/button1");
+  loop->mapModulation("out/slider3");
+  loop->setPulsesPerQuarterNote(8);
 
   for (;;) {
-    mapLooper.update(5);
+    mapLooper.update(1);
   }
   return 0;
 }
