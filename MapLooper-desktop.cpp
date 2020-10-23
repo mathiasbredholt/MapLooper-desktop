@@ -22,12 +22,17 @@
 int main(int argc, char const *argv[]) {
   MapLooper::MapLooper mapLooper;
 
-  MapLooper::Loop* loop = mapLooper.createLoop("test", MPR_FLT, 1);
-  loop->mapInput("out/slider1");
-  loop->mapOutput("in/slider2");
-  loop->mapMix("out/button1");
-  loop->mapModulation("out/slider3");
-  loop->setPulsesPerQuarterNote(8);
+  // Create loop with name 'test'
+  MapLooper::Loop* loop = mapLooper.createLoop("test");
+
+  // Automap loop control parameters
+  loop->mapInput("slider1/output");
+  loop->mapDelay("slider2/output");
+  loop->mapModulation("slider3/output");
+  loop->mapRecord("slider1/touch");
+  loop->mapOutput("slider4/input");
+
+  loop->setPulsesPerQuarterNote(16);
 
   for (;;) {
     mapLooper.update(1);
